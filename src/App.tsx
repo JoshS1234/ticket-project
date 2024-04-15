@@ -3,7 +3,6 @@ import TicketContainer from "./components/TicketContainer";
 import team from "./data/team";
 
 function App() {
-  console.log(team);
   return (
     <div>
       <h1>Ticket project</h1>
