@@ -1,6 +1,7 @@
 .ticket-container {
   width: 95%;
-  height: 85vh;
+  min-height: 85vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

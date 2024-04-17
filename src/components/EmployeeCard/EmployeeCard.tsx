@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { EmployeeCardProps } from "../types/type";
+import { EmployeeCardProps } from "../../types/type.js";
 import "./EmployeeCard.scss";
 import CounterDisplay from "./CounterDisplay.js";
+import { Link } from "react-router-dom";
 
 const EmployeeCard = ({ employee }: EmployeeCardProps) => {
   const [counter, setCounter] = useState<number>(0);
@@ -17,12 +18,20 @@ const EmployeeCard = ({ employee }: EmployeeCardProps) => {
   return (
     <div className="employee-card">
       <div className="employee-card__employee-data-container">
-        <p className="employee-card__employee-data">Name: {employee.name}</p>
-        {/* {employee.profile.profilePicture && (
-        <img src={employee.profile.profilePicture} alt="" />
-      )} */}
+        <div className="employee-card__header-content">
+          <h2 className="employee-card__employee-data-header">
+            {employee.name}
+          </h2>
+          <button>
+            <Link to="/profiles" state={{ employee: employee }}>
+              Profile
+            </Link>
+          </button>
+        </div>
 
-        <p className="employee-card__employee-data">Role: {employee.role}</p>
+        <h4 className="employee-card__employee-data-sub-header">
+          {employee.role}
+        </h4>
         <p className="employee-card__employee-data">
           Experience: {employee.profile.experience}
         </p>

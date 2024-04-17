@@ -8,7 +8,10 @@ const Nav = () => {
         Home
       </Link>
       <Link to="/tickets" className="nav-bar__link">
-        Ticketing system
+        Ticketing
+      </Link>
+      <Link to="/profiles" className="nav-bar__link">
+        Profiles
       </Link>
     </nav>
   );

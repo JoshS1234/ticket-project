@@ -14,7 +14,6 @@ const CounterDisplay = ({
   return (
     <div className="counter-display">
       <h3>Counter</h3>
-      <h2 className="counter-display__count-number">{`${counter}`}</h2>
       <div className="counter-display__button-container">
         <button
           className="counter-display__button counter-display__button--minus"
@@ -22,6 +21,7 @@ const CounterDisplay = ({
         >
           -
         </button>
+        <h2 className="counter-display__count-number">{`${counter}`}</h2>
         <button
           className="counter-display__button counter-display__button--plus"
           onClick={handleIncrementCounter}
