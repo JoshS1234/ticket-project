@@ -3,7 +3,7 @@ import { EmployeeCardProps } from "../types/type";
 import "./EmployeeCard.scss";
 import CounterDisplay from "./CounterDisplay.js";
 
-const TeamCard = ({ employee }: EmployeeCardProps) => {
+const EmployeeCard = ({ employee }: EmployeeCardProps) => {
   const [counter, setCounter] = useState<number>(0);
   const handleIncrementCounter = () => {
     setCounter(counter + 1);
@@ -17,14 +17,31 @@ const TeamCard = ({ employee }: EmployeeCardProps) => {
   return (
     <div className="employee-card">
       <p className="employee-card__employee-data">Name: {employee.name}</p>
+      {/* {employee.profile.profilePicture && (
+        <img src={employee.profile.profilePicture} alt="" />
+      )} */}
+
       <p className="employee-card__employee-data">Role: {employee.role}</p>
+      <p className="employee-card__employee-data">
+        Experience: {employee.profile.experience}
+      </p>
+      <p className="employee-card__employee-data">
+        Department: {employee.profile.department}
+      </p>
+
       <CounterDisplay
         counter={counter}
         handleIncrementCounter={handleIncrementCounter}
         handleDecrementCounter={handleDecrementCounter}
       />
+      <p>Tech stack:</p>
+      <ul className="employee-card__tech-list-container">
+        {employee.profile.techstack.map((tech) => {
+          return <li className="employee-card__tech-list-item">{tech}</li>;
+        })}
+      </ul>
     </div>
   );
 };
 
-export default TeamCard;
+export default EmployeeCard;

@@ -1,4 +1,4 @@
-import TeamCard from "../components/EmployeeCard";
+import EmployeeCard from "../components/EmployeeCard";
 import { Employee, TicketContainerProps } from "../types/type";
 import "./ticketContainer.scss";
 
@@ -7,7 +7,7 @@ const TicketContainer = ({ team }: TicketContainerProps) => {
   return (
     <div className="ticket-container">
       {team.map((employee: Employee) => {
-        return <TeamCard key={employee.id} employee={employee} />;
+        return <EmployeeCard key={employee.id} employee={employee} />;
       })}
     </div>
   );
