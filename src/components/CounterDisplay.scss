@@ -1,15 +1,17 @@
 .counter-display {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   width: 90%;
+  height: 40%;
   margin: 5% auto;
   border: 2px solid black;
   padding: 1%;
   border-radius: 5px;
 
   .counter-display__count-number {
-    margin: 20px;
+    // margin: 20px;
   }
 
   .counter-display__button-container {
@@ -19,7 +21,7 @@
     justify-content: space-around;
 
     .counter-display__button {
-      font-size: 2rem;
+      font-size: 1.5rem;
       background-color: transparent;
     }
   }

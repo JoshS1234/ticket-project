@@ -34,12 +34,7 @@ const EmployeeCard = ({ employee }: EmployeeCardProps) => {
         handleIncrementCounter={handleIncrementCounter}
         handleDecrementCounter={handleDecrementCounter}
       />
-      <p>Tech stack:</p>
-      <ul className="employee-card__tech-list-container">
-        {employee.profile.techstack.map((tech) => {
-          return <li className="employee-card__tech-list-item">{tech}</li>;
-        })}
-      </ul>
+      <p>Tech stack: {employee.profile.techstack.join(", ")}</p>
     </div>
   );
 };
