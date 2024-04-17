@@ -1,12 +1,24 @@
 import "./App.scss";
 import TicketContainer from "./containers/TicketContainer";
 import team from "./data/team";
+import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
+import Home from "./components/Home";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="app">
-      <h1 className="app__header">Ticket project</h1>
-      <TicketContainer team={team} />
+      <BrowserRouter>
+        <Header />
+        <Outlet />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/tickets" element={<TicketContainer team={team} />}>
+            {/* <Route path="*" element={<NoPage />} /> */}
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

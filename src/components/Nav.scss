@@ -1,0 +1,20 @@
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  height: 5vh;
+
+  .nav-bar__link {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    font-size: 2rem;
+    padding: 5px auto;
+    align-items: center;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+}

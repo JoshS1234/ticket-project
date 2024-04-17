@@ -6,13 +6,9 @@
 
 .app {
   width: 100vw;
-  height: fit-content;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .app__header {
-    font-size: 2rem;
-    padding: 30px 0px 20px 0px;
-  }
+  justify-content: flex-start;
 }

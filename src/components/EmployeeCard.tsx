@@ -16,25 +16,29 @@ const EmployeeCard = ({ employee }: EmployeeCardProps) => {
 
   return (
     <div className="employee-card">
-      <p className="employee-card__employee-data">Name: {employee.name}</p>
-      {/* {employee.profile.profilePicture && (
+      <div className="employee-card__employee-data-container">
+        <p className="employee-card__employee-data">Name: {employee.name}</p>
+        {/* {employee.profile.profilePicture && (
         <img src={employee.profile.profilePicture} alt="" />
       )} */}
 
-      <p className="employee-card__employee-data">Role: {employee.role}</p>
-      <p className="employee-card__employee-data">
-        Experience: {employee.profile.experience}
-      </p>
-      <p className="employee-card__employee-data">
-        Department: {employee.profile.department}
-      </p>
+        <p className="employee-card__employee-data">Role: {employee.role}</p>
+        <p className="employee-card__employee-data">
+          Experience: {employee.profile.experience}
+        </p>
+        <p className="employee-card__employee-data">
+          Department: {employee.profile.department}
+        </p>
+        <p className="employee-card__employee-data">
+          Tech stack: {employee.profile.techstack.join(", ")}
+        </p>
+      </div>
 
       <CounterDisplay
         counter={counter}
         handleIncrementCounter={handleIncrementCounter}
         handleDecrementCounter={handleDecrementCounter}
       />
-      <p>Tech stack: {employee.profile.techstack.join(", ")}</p>
     </div>
   );
 };
