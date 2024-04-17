@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .app__header {
+    font-size: 2rem;
+    padding: 30px 0px 0px 0px;
+  }
+}

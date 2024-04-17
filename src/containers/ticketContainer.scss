@@ -1,0 +1,15 @@
+.ticket-container {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .ticket-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

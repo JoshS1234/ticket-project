@@ -1,11 +1,11 @@
 import "./App.scss";
-import TicketContainer from "./components/TicketContainer";
+import TicketContainer from "./containers/TicketContainer";
 import team from "./data/team";
 
 function App() {
   return (
-    <div>
-      <h1>Ticket project</h1>
+    <div className="app">
+      <h1 className="app__header">Ticket project</h1>
       <TicketContainer team={team} />
     </div>
   );
