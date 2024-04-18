@@ -1,5 +1,4 @@
 import TicketContainer from "../../containers/TicketContainer";
-import EmployeeCard from "../EmployeeCard/EmployeeCard";
 import "./Profiles.scss";
 import { useLocation } from "react-router-dom";
 
