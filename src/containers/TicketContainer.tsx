@@ -18,8 +18,11 @@ const TicketContainer = ({ team }: TicketContainerProps) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const name = e.currentTarget[0].value.toLowerCase();
-    const job = e.currentTarget[1].value.toLowerCase();
+    const targetName = e.currentTarget[0] as HTMLInputElement;
+    const targetJob = e.currentTarget[1] as HTMLInputElement;
+
+    const name = targetName.value.toLowerCase();
+    const job = targetJob.value.toLowerCase();
 
     let filteredTeam = team.filter((teamMember) => {
       return teamMember.name.toLowerCase().includes(name);
@@ -33,9 +36,18 @@ const TicketContainer = ({ team }: TicketContainerProps) => {
     setTeamState(filteredTeam);
   };
 
+  const handleReset = (e: FormEvent<HTMLFormElement>) => {
+    e.currentTarget.reset();
+    setTeamState(team);
+  };
+
   return (
     <div className="ticket-container-body">
-      <form className="filter-bar" onSubmit={handleSubmit}>
+      <form
+        className="filter-bar"
+        onSubmit={handleSubmit}
+        onReset={handleReset}
+      >
         <div>
           <label htmlFor="searchByName" className="filter-bar__textbox-label">
             Search by name
